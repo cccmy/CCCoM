@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/themes/default/jquery.mobile-1.4.5.min.css" />		
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="http://192.168.199.1:8080/target/target-script-min.js#anonymous"></script>
+    <title>CCCoM</title>
+</head>
+
+<body>
+    <div class="app">
+    	<div id="homePage" data-role="page">
+    		<div data-role="header">
+		        <h1>Church Portal</h1>
+    		</div> <!-- /header -->
+    		<div data-role="content">
+<!--		        <div id="deviceready" class="blink">
+		            <p class="event listening">Connecting to Device</p>
+		            <p class="event received">Device is Ready</p>
+		    </div> -->
+	            <img id="logoPic" src="img/logo_m.png" alt="CCCoM Logo" />
+    	        <div data-role="controlgroup">
+	                <a href="#newsPage" data-role="button">News</a>
+	                <a href="#sermonPage" data-role="button">Sermons</a>
+	                <a href="#YouTubePage" data-role="button">YouTube</a>
+	                <a href="#aboutPage" data-role="button">Log</a>
+	            </div>
+			</div> <!-- content -->
+	    </div> <!-- /page -->
+	    <div id="newsPage" data-role="page">
+	    	<div data-role="header">
+	    		<h1>Blog News</h1>	    		
+		        <a href="#homePage" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
+            	<a href="#" id="refreshNewsButton" data-role="button" data-icon="refresh" data-iconpos="notext">Refresh News</a>
+	    	</div> <!-- /header -->
+	    	<div data-role="content">
+	    		<ul id="newsList" data-role="listview" data-filter="true">
+	    			<li>News List</li>
+	    		</ul>
+	    	</div> <!-- /content -->
+	    	<div data-role="footer" data-id="footernav" data-position="fixed">
+	            <div data-role="navbar">
+	                <ul>
+	                    <li><a href="#" class="ui-btn-active ui-state-persist">News</a></li>
+	                    <li><a href="#sermonPage">Sermons</a></li>
+	                    <li><a href="#YouTubePage">YouTube</a></li>
+	                    <li><a href="#aboutPage">Log</a></li>
+	                </ul>
+	            </div><!-- /navbar -->    		
+	    	</div> <!-- /footer -->
+	    </div> <!-- /page -->
+	    <div id="sermonPage" data-role="page">
+	    	<div data-role="header">
+	    		<h1>Sermons</h1>
+		        <a href="#homePage" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
+            	<a href="#" id="refreshSermonButton" data-role="button" data-icon="refresh" data-iconpos="notext">Refresh Sermon</a>
+	    	</div> <!-- /header -->
+	    	<div data-role="content">
+	    		<ul id="sermonList" data-role="listView" data-filter="true">
+	    			<li>Sermon Listing</li>
+	    		</ul>
+	    	</div> <!-- /content --> 
+	    	<div data-role="footer" data-id="footernav" data-position="fixed">
+	            <div data-role="navbar">
+	                <ul>
+	                    <li><a href="#newsPage">News</a></li>
+	                    <li><a href="#" class="ui-btn-active ui-state-persist">Sermons</a></li>
+	                    <li><a href="#YouTubePage">YouTube</a></li>
+	                    <li><a href="#aboutPage">Log</a></li>
+	                </ul>
+	            </div><!-- /navbar -->    		
+	    	</div> <!-- /footer -->
+	    </div> <!-- /page -->
+	    <div id="YouTubePage" data-role="page">
+	    	<div data-role="header">
+	    		<h1>YouTube Channel</h1>
+		        <a href="#homePage" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
+            	<a href="#" id="refreshYouTubeButton" data-role="button" data-icon="refresh" data-iconpos="notext">Refresh Sermon</a>
+	    	</div> <!-- /header -->
+	    	<div data-role="content">
+	    		<ul id="YouTubeList" data-role="listView" data-filter="true">
+	    			<li>YouTube Channel</li>
+	    		</ul>
+	    	</div> <!-- /content --> 
+	    	<div data-role="footer" data-id="footernav" data-position="fixed">
+	            <div data-role="navbar">
+	                <ul>
+	                    <li><a href="#newsPage">News</a></li>
+	                    <li><a href="#sermonPage">Sermons</a></li>
+	                    <li><a href="#" class="ui-btn-active ui-state-persist">YouTube</a></li>
+	                    <li><a href="#aboutPage">Log</a></li>
+	                </ul>
+	            </div><!-- /navbar -->    		
+	    	</div> <!-- /footer -->
+	    </div> <!-- /page -->
+	    <div id="aboutPage" data-role="page">
+	    	<div data-role="header">
+	    		<h1>About This App</h1>
+		        <a href="#aboutPage" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
+	    	</div> <!-- /header -->
+	    	<div data-role="content">
+            	<H3>Church Portal App</H3>
+            	<p>This app is meant for the members of the Central Christian Church of Malaysia. It provides quick and immediate access to announcements via our blog, sermons from our website and our YouTube channel where you can view recorded past classes, workshops and even some worship.</p>
+                <H3>App log</H3>
+	    		<ul id="logList" data-role="listView">
+	    			<li>Log for debuging:</li>
+	    		</ul>
+	    	</div> <!-- /content --> 
+	    	<div data-role="footer" data-id="footernav" data-position="fixed">
+	            <div data-role="navbar">                
+	                <ul>
+	                    <li><a href="#newsPage">News</a></li>
+	                    <li><a href="#sermonPage">Sermons</a></li>
+	                    <li><a href="#YouTubePage">YouTube</a></li>
+	                    <li><a href="#" class="ui-btn-active ui-state-persist">Log</a></li>
+	                </ul>
+	            </div><!-- /navbar -->    		
+	    	</div> <!-- /footer -->
+	    </div> <!-- /page -->
+	   
+   	</div> <!-- /app -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>

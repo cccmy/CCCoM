@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/themes/default/jquery.mobile-1.4.5.min.css" />		
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="http://192.168.1.209:8080/target/target-script-min.js#anonymous"></script>
+    <title>CCCoM Church Portal</title>
+</head>
+
+<body>
+ 	<div id="homePage" data-role="page">
+        <div data-role="header" data-position="fixed">
+            <h1>Welcome</h1>
+        </div><!-- /header -->
+   
+        <div data-role="content">
+            <img id="logoPic" src="img/logo_m.png" alt="CCCoM Logo" />
+            <div data-role="controlgroup">
+                <a href="#newsPage" data-role="button">News</a>
+                <a href="#sermonPage" data-role="button">Sermons</a>
+                <a href="#YouTubePage" data-role="button">YouTube</a>
+                <a href="#logPage" data-role="button">Log</a>
+            </div><!-- /controlgroup -->
+
+        </div>	<!-- /content -->
+
+        <div data-role="footer" data-id="footernav" data-position="fixed">
+        </div>	<!-- /footer -->
+
+    </div><!-- /page -->
+
+    <div id="newsPage" data-role="page">
+        <div data-role="header" data-position="fixed">
+            <h1>News</h1>
+            <a href="#" id="refreshNewsButton" data-role="button" data-icon="refresh" data-iconpos="notext">Refresh News</a>
+        </div><!-- /header -->
+
+        <div data-role="content">
+
+            <ul id="newsList" data-role="listview" data-filter="true">News</ul>
+        </div>	<!-- /content -->
+
+        <div data-role="footer" data-id="footernav" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#homePage">Home</a></li>
+                    <li><a href="#" class="ui-btn-active ui-state-persist">News</a></li>
+                    <li><a href="#sermonPage">Sermons</a></li>
+                    <li><a href="#YouTubePage">YouTube</a></li>
+                    <li><a href="#logPage">Log</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>	<!-- /footer -->
+    </div><!-- /page -->
+
+    <div id="sermonPage" data-role="page">
+
+        <div data-role="header" data-position="fixed">
+            <h1>Sermons</h1>
+            <a href="#" id="refreshSermonButton" data-role="button" data-icon="refresh" data-iconpos="notext">Refresh Sermon</a>
+        </div><!-- /header -->
+
+        <div data-role="content">
+            <ul id="sermonList" data-role="listview" data-filter="true">Sermons</ul>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-id="footernav" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#homePage">Home</a></li>
+                    <li><a href="#newsPage">News</a></li>
+                    <li><a href="#" class="ui-btn-active ui-state-persist">Sermons</a></li>
+                    <li><a href="#YouTubePage">YouTube</a></li>
+                    <li><a href="#logPage">Log</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>	<!-- /footer -->
+    </div> <!-- /page -->
+    <div id="YouTubePage" data-role="page">
+
+        <div data-role="header" data-position="fixed">
+            <h1>YouTube</h1>
+            <a href="#" id="refreshYouTubeButton" data-role="button" data-icon="refresh" data-iconpos="notext">Refresh Channel</a>
+        </div><!-- /header -->
+
+        <div data-role="content">
+            <ul id="YouTubeList" data-role="listview" data-filter="true">
+            	<li>YouTube Channel</li>
+            	
+            </ul>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-id="footernav" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#homePage">Home</a></li>
+                    <li><a href="#newsPage">News</a></li>
+                    <li><a href="#sermonPage">Sermons</a></li>
+                    <li><a href="#" class="ui-btn-active ui-state-persist">YouTube</a></li>
+                    <li><a href="#logPage">Log</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>	<!-- /footer -->
+    </div><!-- /page -->
+
+ 	<div id="logPage" data-role="page">
+        <div data-role="header" data-position="fixed">
+            <h1>Log</h1>
+        </div><!-- /header -->
+   
+        <div data-role="content">
+            <h4>Application Logs</h4>
+            <ul id="logList" data-role="listview"></ul>
+        </div>	<!-- /content -->
+
+        <div data-role="footer" data-id="footernav" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#homePage">Home</a></li>
+                    <li><a href="#newsPage">News</a></li>
+                    <li><a href="#sermonPage">Sermons</a></li>
+                    <li><a href="#YouTubePage">YouTube</a></li>
+                    <li><a href="#" class="ui-btn-active ui-state-persist">Log</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>	<!-- /footer -->
+
+    </div><!-- /page -->
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+	
+
+</body>
+
+</html>
