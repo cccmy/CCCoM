@@ -78,6 +78,10 @@
     <feature name="Toast">
         <param name="ios-package" value="Toast" />
     </feature>
+    <feature name="AdMob">
+        <param name="ios-package" value="CDVAdMobPlugin" />
+        <param name="onload" value="true" />
+    </feature>
     <name>CCCoM Church Portal</name>
     <description>
         Official app, a Church portal for the Central Christian Church of Malaysia. Get the latest announcements and watch sermons direct from your phone.

@@ -40,7 +40,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/themes/default/jquery.mobile-1.4.5.min.css" />		
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <script src="http://192.168.199.1:8080/target/target-script-min.js#anonymous"></script>
+    <script src="http://192.168.0.217:8080/target/target-script-min.js#anonymous"></script>
     <title>CCCoM</title>
 </head>
 
@@ -50,108 +50,116 @@
     		<div data-role="header">
 		        <h1>Church Portal</h1>
     		</div> <!-- /header -->
-    		<div data-role="content">
+    		<div role="main" class="ui-content">
 <!--		        <div id="deviceready" class="blink">
 		            <p class="event listening">Connecting to Device</p>
 		            <p class="event received">Device is Ready</p>
 		    </div> -->
+		    	<div id="appStatus" class="blink"> 
+		    		<p class="appStatus loading">Loading</p>
+		    		<p class="appStatus completed">Loading completed</p>
+		    	</div>
 	            <img id="logoPic" src="img/logo_m.png" alt="CCCoM Logo" />
     	        <div data-role="controlgroup">
 	                <a href="#newsPage" data-role="button">News</a>
 	                <a href="#sermonPage" data-role="button">Sermons</a>
 	                <a href="#YouTubePage" data-role="button">YouTube</a>
-	                <a href="#aboutPage" data-role="button">Log</a>
+	                <a href="#aboutPage" data-role="button">About</a>
 	            </div>
 			</div> <!-- content -->
 	    </div> <!-- /page -->
 	    <div id="newsPage" data-role="page">
-	    	<div data-role="header">
+	    	<div data-role="header" data-id="headernav">
 	    		<h1>Blog News</h1>	    		
 		        <a href="#homePage" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
             	<a href="#" id="refreshNewsButton" data-role="button" data-icon="refresh" data-iconpos="notext">Refresh News</a>
-	    	</div> <!-- /header -->
-	    	<div data-role="content">
-	    		<ul id="newsList" data-role="listview" data-filter="true">
-	    			<li>News List</li>
-	    		</ul>
-	    	</div> <!-- /content -->
-	    	<div data-role="footer" data-id="footernav" data-position="fixed">
 	            <div data-role="navbar">
 	                <ul>
 	                    <li><a href="#" class="ui-btn-active ui-state-persist">News</a></li>
 	                    <li><a href="#sermonPage">Sermons</a></li>
 	                    <li><a href="#YouTubePage">YouTube</a></li>
-	                    <li><a href="#aboutPage">Log</a></li>
+	                    <li><a href="#aboutPage">About</a></li>
 	                </ul>
 	            </div><!-- /navbar -->    		
+	    	</div> <!-- /header -->
+	    	<div role="main" class="ui-content">
+	    		<ul id="newsList" data-role="listview" data-filter="true">
+	    			<li>News List</li>
+	    		</ul>
+	    	</div> <!-- /content -->
+<!--	    	<div data-role="footer" data-position="fixed">
 	    	</div> <!-- /footer -->
 	    </div> <!-- /page -->
 	    <div id="sermonPage" data-role="page">
-	    	<div data-role="header">
+	    	<div data-role="header" data-id"headernav">
 	    		<h1>Sermons</h1>
 		        <a href="#homePage" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
             	<a href="#" id="refreshSermonButton" data-role="button" data-icon="refresh" data-iconpos="notext">Refresh Sermon</a>
-	    	</div> <!-- /header -->
-	    	<div data-role="content">
-	    		<ul id="sermonList" data-role="listView" data-filter="true">
-	    			<li>Sermon Listing</li>
-	    		</ul>
-	    	</div> <!-- /content --> 
-	    	<div data-role="footer" data-id="footernav" data-position="fixed">
 	            <div data-role="navbar">
 	                <ul>
 	                    <li><a href="#newsPage">News</a></li>
 	                    <li><a href="#" class="ui-btn-active ui-state-persist">Sermons</a></li>
 	                    <li><a href="#YouTubePage">YouTube</a></li>
-	                    <li><a href="#aboutPage">Log</a></li>
+	                    <li><a href="#aboutPage">About</a></li>
 	                </ul>
 	            </div><!-- /navbar -->    		
+	    	</div> <!-- /header -->
+	    	<div role="main" class="ui-content">
+	    		<ul id="sermonList" data-role="listView" data-filter="true">
+	    			<li>Sermon Listing</li>
+	    		</ul>
+	    	</div> <!-- /content --> 
+<!--	    	<div data-role="footer" data-id="footernav" data-position="fixed">
 	    	</div> <!-- /footer -->
 	    </div> <!-- /page -->
 	    <div id="YouTubePage" data-role="page">
-	    	<div data-role="header">
+	    	<div data-role="header" data-id="headernav">
 	    		<h1>YouTube Channel</h1>
 		        <a href="#homePage" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
-            	<a href="#" id="refreshYouTubeButton" data-role="button" data-icon="refresh" data-iconpos="notext">Refresh Sermon</a>
-	    	</div> <!-- /header -->
-	    	<div data-role="content">
-	    		<ul id="YouTubeList" data-role="listView" data-filter="true">
-	    			<li>YouTube Channel</li>
-	    		</ul>
-	    	</div> <!-- /content --> 
-	    	<div data-role="footer" data-id="footernav" data-position="fixed">
+            	<a href="#" id="refreshYouTubeButton" data-role="button" data-icon="refresh" data-iconpos="notext">Refresh YouTube</a>
 	            <div data-role="navbar">
 	                <ul>
 	                    <li><a href="#newsPage">News</a></li>
 	                    <li><a href="#sermonPage">Sermons</a></li>
 	                    <li><a href="#" class="ui-btn-active ui-state-persist">YouTube</a></li>
-	                    <li><a href="#aboutPage">Log</a></li>
+	                    <li><a href="#aboutPage">About</a></li>
 	                </ul>
 	            </div><!-- /navbar -->    		
+		   	</div> <!-- /header -->
+	    	<div role="main" class="ui-content">
+    			<form>
+					<div class="ui-field-contain">
+					    <label for="YouTubePlaylist">Category:</label>
+					    <select name="YouTubePlaylist" id="YouTubePlaylist">
+					    </select>
+					</div>
+				</form>
+	    		<ul id="YouTubeList" data-role="listView" data-filter="true">
+	    			<li>YouTube Channel</li>
+	    			
+	    		</ul>
+	    	</div> <!-- /content --> 
+<!--	    	<div data-role="footer" data-id="footernav" data-position="fixed">
 	    	</div> <!-- /footer -->
 	    </div> <!-- /page -->
 	    <div id="aboutPage" data-role="page">
-	    	<div data-role="header">
+	    	<div data-role="header" data-id="headernav">
 	    		<h1>About This App</h1>
 		        <a href="#aboutPage" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
-	    	</div> <!-- /header -->
-	    	<div data-role="content">
-            	<H3>Church Portal App</H3>
-            	<p>This app is meant for the members of the Central Christian Church of Malaysia. It provides quick and immediate access to announcements via our blog, sermons from our website and our YouTube channel where you can view recorded past classes, workshops and even some worship.</p>
-                <H3>App log</H3>
-	    		<ul id="logList" data-role="listView">
-	    			<li>Log for debuging:</li>
-	    		</ul>
-	    	</div> <!-- /content --> 
-	    	<div data-role="footer" data-id="footernav" data-position="fixed">
 	            <div data-role="navbar">                
 	                <ul>
 	                    <li><a href="#newsPage">News</a></li>
 	                    <li><a href="#sermonPage">Sermons</a></li>
 	                    <li><a href="#YouTubePage">YouTube</a></li>
-	                    <li><a href="#" class="ui-btn-active ui-state-persist">Log</a></li>
+	                    <li><a href="#" class="ui-btn-active ui-state-persist">About</a></li>
 	                </ul>
 	            </div><!-- /navbar -->    		
+	    	</div> <!-- /header -->
+	    	<div role="main" class="ui-content">
+            	<H3>Church Portal App</H3>
+            	<p>This app is meant for the members of the Central Christian Church of Malaysia. It provides quick and immediate access to announcements via our blog, sermons from our website and our YouTube channel where you can view recorded past classes, workshops and even some worship.</p>
+		    </div> <!-- /content --> 
+<!--	    	<div data-role="footer" data-id="footernav" data-position="fixed">
 	    	</div> <!-- /footer -->
 	    </div> <!-- /page -->
 	   

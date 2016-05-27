@@ -137,6 +137,16 @@ body {
     display:none;
 }
 
+.appStatus.loading {
+    background-color:#888888;
+    display:block;
+}
+
+.appStatus.completed{
+    background-color:#4B946A;
+    display:none;	
+}
+
 @keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }

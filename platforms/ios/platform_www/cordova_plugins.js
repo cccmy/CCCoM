@@ -580,6 +580,14 @@ module.exports = [
         "clobbers": [
             "VideoPlayer"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
+        "id": "cordova-plugin-admobpro.AdMob",
+        "pluginId": "cordova-plugin-admobpro",
+        "clobbers": [
+            "window.AdMob"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -607,7 +615,9 @@ module.exports.metadata =
     "cordova-plugin-vibration": "2.1.1",
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-x-toast": "2.5.1",
-    "com.moust.cordova.videoplayer": "1.0.1"
+    "com.moust.cordova.videoplayer": "1.0.1",
+    "cordova-plugin-extension": "1.5.1",
+    "cordova-plugin-admobpro": "2.17.1"
 }
 // BOTTOM OF METADATA
 });

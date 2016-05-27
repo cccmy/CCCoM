@@ -99,6 +99,10 @@
                         {
                             "xml": "<feature name=\"Toast\"><param name=\"ios-package\" value=\"Toast\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"AdMob\"><param name=\"ios-package\" value=\"CDVAdMobPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -109,6 +113,12 @@
                         {
                             "xml": "<string />",
                             "count": 2
+                        }
+                    ],
+                    "NSAppTransportSecurity": [
+                        {
+                            "xml": "<dict><key>NSAllowsArbitraryLoads</key><true /></dict>",
+                            "count": 1
                         }
                     ]
                 }
@@ -183,6 +193,12 @@
             "PACKAGE_NAME": "org.cccmy.CCCoM"
         },
         "com.moust.cordova.videoplayer": {
+            "PACKAGE_NAME": "org.cccmy.CCCoM"
+        },
+        "cordova-plugin-extension": {
+            "PACKAGE_NAME": "org.cccmy.CCCoM"
+        },
+        "cordova-plugin-admobpro": {
             "PACKAGE_NAME": "org.cccmy.CCCoM"
         }
     },
@@ -768,6 +784,14 @@
             "clobbers": [
                 "VideoPlayer"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
+            "id": "cordova-plugin-admobpro.AdMob",
+            "pluginId": "cordova-plugin-admobpro",
+            "clobbers": [
+                "window.AdMob"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -793,6 +817,8 @@
         "cordova-plugin-vibration": "2.1.1",
         "cordova-plugin-whitelist": "1.2.2",
         "cordova-plugin-x-toast": "2.5.1",
-        "com.moust.cordova.videoplayer": "1.0.1"
+        "com.moust.cordova.videoplayer": "1.0.1",
+        "cordova-plugin-extension": "1.5.1",
+        "cordova-plugin-admobpro": "2.17.1"
     }
 }

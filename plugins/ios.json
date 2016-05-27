@@ -69,6 +69,9 @@
         },
         "com.moust.cordova.videoplayer": {
             "PACKAGE_NAME": "org.cccmy.CCCoM"
+        },
+        "cordova-plugin-admobpro": {
+            "PACKAGE_NAME": "org.cccmy.CCCoM"
         }
     },
     "dependent_plugins": {
@@ -76,6 +79,9 @@
             "PACKAGE_NAME": "org.cccmy.CCCoM"
         },
         "cordova-plugin-file": {
+            "PACKAGE_NAME": "org.cccmy.CCCoM"
+        },
+        "cordova-plugin-extension": {
             "PACKAGE_NAME": "org.cccmy.CCCoM"
         }
     }
